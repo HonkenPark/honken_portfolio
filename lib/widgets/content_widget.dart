@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:honken_portfolio/controllers/setting_controller.dart';
+import 'package:honken_portfolio/widgets/home_widget.dart';
 import 'package:honken_portfolio/widgets/settings_widget.dart';
 
 class Content extends StatefulWidget {
@@ -18,6 +21,14 @@ class _ContentState extends State<Content> {
   @override
   Widget build(BuildContext context) {
     _selectedIndex = widget.index;
+    final List<Widget> widgetOptions = <Widget>[
+      const HomeWidget(),
+      Text('$_selectedIndex'),
+      Text('$_selectedIndex'),
+      Text('$_selectedIndex'),
+    ];
+    Get.put(SettingController());
+
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
@@ -26,13 +37,10 @@ class _ContentState extends State<Content> {
       ),
       child: Column(
         children: [
-          const Settings(
-            isSetting: false,
+          Settings(
+            isSetting: Get.find<SettingController>().isSetting.value,
           ),
-          Text(
-            '$_selectedIndex',
-            style: const TextStyle(color: Colors.white),
-          ),
+          widgetOptions.elementAt(_selectedIndex),
         ],
       ),
     );

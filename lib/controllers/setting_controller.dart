@@ -7,17 +7,43 @@ class SettingController extends GetxController {
   RxBool isLanguage = false.obs;
   RxBool isTheme = false.obs;
 
-  void changeLanguage(RxInt input) {
-    language = input;
+  void changeLanguage(int input) {
+    language = input.obs;
+    update();
   }
 
-  void changeTheme(RxInt input) {
-    theme = input;
+  void changeTheme(int input) {
+    theme = input.obs;
+    update();
   }
 
-  void toggleSetting(bool input) {
-    print('input: $input');
-    isSetting = input.obs;
-    isSetting.refresh();
+  void initSetting() {
+    isSetting = false.obs;
+    isLanguage = false.obs;
+    isTheme = false.obs;
+    update();
+  }
+
+  void toggleSetting() {
+    if (isSetting.value) {
+      isSetting = false.obs;
+      isLanguage = false.obs;
+      isTheme = false.obs;
+    } else {
+      isSetting = true.obs;
+    }
+    update();
+  }
+
+  void toggleLanguage() {
+    isLanguage = RxBool(isLanguage.toggle().value);
+    isTheme = false.obs;
+    update();
+  }
+
+  void toggleTheme() {
+    isTheme = RxBool(isTheme.toggle().value);
+    isLanguage = false.obs;
+    update();
   }
 }

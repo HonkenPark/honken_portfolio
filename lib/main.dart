@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:honken_portfolio/controllers/setting_controller.dart';
 import 'package:honken_portfolio/screens/main_screens.dart';
 
 void main() {
@@ -12,16 +10,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(SettingController());
-    return MaterialApp(
-      home: GetBuilder<SettingController>(
-        builder: (controller) {
-          return MainScreen(
-            index: 0,
-            lang: controller.language.value,
-            theme: controller.theme.value,
-          );
-        },
+    return const MaterialApp(
+      home: MainScreen(
+        navIndex: 0,
       ),
     );
   }

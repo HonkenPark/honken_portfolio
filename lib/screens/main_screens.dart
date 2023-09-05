@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:honken_portfolio/widgets/content_widget.dart';
+import 'package:get/get.dart';
+import 'package:honken_portfolio/controllers/setting_controller.dart';
+import 'package:honken_portfolio/model/text_id_model.dart';
+import 'package:honken_portfolio/widgets/about_widget.dart';
+import 'package:honken_portfolio/widgets/contact_widget.dart';
+import 'package:honken_portfolio/widgets/home_widget.dart';
+import 'package:honken_portfolio/widgets/project_widget.dart';
+import 'package:honken_portfolio/widgets/settings_widget.dart';
 
 class MainScreen extends StatefulWidget {
-  final int index, theme, lang;
+  final int navIndex;
   const MainScreen({
     super.key,
-    required this.index,
-    required this.theme,
-    required this.lang,
+    required this.navIndex,
   });
 
   @override
@@ -15,58 +20,94 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  late int index, theme, lang;
+  late int navIndex;
 
   @override
   void initState() {
-    index = widget.index;
-    theme = widget.theme;
-    lang = widget.lang;
+    navIndex = widget.navIndex;
     super.initState();
   }
 
-  void _onItemTapped(int input) {
+  void _onItemTapped(int index) {
+    Get.find<SettingController>().initSetting();
     setState(() {
-      index = input;
+      navIndex = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Content(index: index),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            label: '홈',
-            backgroundColor: Color(0xFF656C7A),
+    TextIdModel textId = TextIdModel();
+    final List<Widget> widgetOptions = <Widget>[
+      const HomeWidget(),
+      const AboutWidget(),
+      const ProjectWidget(),
+      const ContactWidget(),
+    ];
+
+    return GetBuilder<SettingController>(
+      init: SettingController(),
+      builder: (_) => GestureDetector(
+        onTap: Get.find<SettingController>().initSetting,
+        child: Scaffold(
+          backgroundColor: Get.find<SettingController>().theme.value == 0
+              ? const Color(0xFF2F4164)
+              : const Color(0xFFFF9494),
+          body: Column(
+            children: [
+              Settings(
+                isSetting: Get.find<SettingController>().isSetting.value,
+              ),
+              widgetOptions.elementAt(navIndex)
+            ],
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_box_outlined),
-            label: '경력',
-            backgroundColor: Color(0xFF656C7A),
+          bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: const Icon(Icons.home_outlined),
+                label: Get.find<SettingController>().language.value == 0
+                    ? textId.getTextContent('LABEL_HOME',
+                        Get.find<SettingController>().language.value)
+                    : Get.find<SettingController>().language.value == 1
+                        ? 'HOME'
+                        : '호무',
+              ),
+              BottomNavigationBarItem(
+                icon: const Icon(Icons.account_box_outlined),
+                label: Get.find<SettingController>().language.value == 0
+                    ? '경력'
+                    : Get.find<SettingController>().language.value == 1
+                        ? 'ABOUT'
+                        : '호무',
+              ),
+              BottomNavigationBarItem(
+                icon: const Icon(Icons.work_history_outlined),
+                label: Get.find<SettingController>().language.value == 0
+                    ? '프로젝트'
+                    : Get.find<SettingController>().language.value == 1
+                        ? 'PROJECT'
+                        : '호무',
+              ),
+              BottomNavigationBarItem(
+                icon: const Icon(Icons.contact_mail_outlined),
+                label: Get.find<SettingController>().language.value == 0
+                    ? '연락처'
+                    : Get.find<SettingController>().language.value == 1
+                        ? 'CONTACTS'
+                        : '호무',
+              ),
+            ],
+            currentIndex: navIndex,
+            showUnselectedLabels: true,
+            iconSize: MediaQuery.of(context).size.width * 0.03,
+            selectedItemColor: const Color(0xFFFF6347),
+            unselectedItemColor: const Color(0xFF656C7A),
+            onTap: _onItemTapped,
+            selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+            unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.work_history_outlined),
-            label: '프로젝트',
-            backgroundColor: Color(0xFF656C7A),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.contact_mail_outlined),
-            label: '연락처',
-            backgroundColor: Color(0xFF656C7A),
-          ),
-        ],
-        currentIndex: index,
-        showUnselectedLabels: true,
-        iconSize: 42.0,
-        selectedItemColor: const Color(0xFFFF6347),
-        unselectedItemColor: Colors.white,
-        onTap: _onItemTapped,
-        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
-        unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }
