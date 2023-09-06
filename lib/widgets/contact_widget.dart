@@ -100,7 +100,8 @@ class _ContactWidgetState extends State<ContactWidget> {
                                   color: Colors.white)
                               : const Border.symmetric(),
                           image: const DecorationImage(
-                            image: AssetImage('assets/img/git.png'),
+                            image: AssetImage(
+                                'assets/img/contact_github_white.png'),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -134,7 +135,8 @@ class _ContactWidgetState extends State<ContactWidget> {
                               color: Colors.white)
                           : const Border.symmetric(),
                       image: const DecorationImage(
-                        image: AssetImage('assets/img/ps.png'),
+                        image:
+                            AssetImage('assets/img/contact_linkedin_white.png'),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -166,7 +168,8 @@ class _ContactWidgetState extends State<ContactWidget> {
                               color: Colors.white)
                           : const Border.symmetric(),
                       image: const DecorationImage(
-                        image: AssetImage('assets/img/svn.png'),
+                        image:
+                            AssetImage('assets/img/contact_tistory_white.png'),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -198,7 +201,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                               color: Colors.white)
                           : const Border.symmetric(),
                       image: const DecorationImage(
-                        image: AssetImage('assets/img/qt.png'),
+                        image: AssetImage('assets/img/contact_figma_white.png'),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -228,7 +231,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                               color: Colors.white)
                           : const Border.symmetric(),
                       image: const DecorationImage(
-                        image: AssetImage('assets/img/python.png'),
+                        image: AssetImage('assets/img/contact_hr_white.png'),
                         fit: BoxFit.fill,
                       ),
                     ),
