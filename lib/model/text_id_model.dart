@@ -6,7 +6,27 @@ class TextIdModel {
     "LABEL_HOME": [
       "홈",
       "HOME",
-      "호무"
+      "ホーム"
+    ],
+    "LABEL_ABOUT": [
+      "경력",
+      "ABOUT",
+      "キャリア"
+    ],
+    "LABEL_PROJECT": [
+      "프로젝트",
+      "PROJECT",
+      "プロジェクト"
+    ],
+    "LABEL_CONTACT": [
+      "연락처",
+      "CONTACT",
+      "お問合せ"
+    ],
+    "HOME_GREETING": [
+      "방문해주셔서 감사합니다.\\n항상 발전을 갈망하고,\\n변화에 대응하는 Flexible을\\n갖춘 developer,\\n\\n박홍근의 포트폴리오입니다.",
+      "Portfolio: Honken Park's who is..\\n\\n👉Constantly seeks improvement and embraces change.\\n👉Striving to be flexible in adapting to new challenges.\\n👉Embodies these all qualities.",
+      "コンニチハ、\\n\\n私は常に向上を追求し、変化に対応する柔軟性を大切にする開発者です。新しい課題に適応する柔軟性を持つことを心がけています。\\n\\nこれはそのような開発者、\\n朴鴻根のポートフォリオです"
     ]
   }
   ''';

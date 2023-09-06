@@ -66,36 +66,23 @@ class _MainScreenState extends State<MainScreen> {
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: const Icon(Icons.home_outlined),
-                label: Get.find<SettingController>().language.value == 0
-                    ? textId.getTextContent('LABEL_HOME',
-                        Get.find<SettingController>().language.value)
-                    : Get.find<SettingController>().language.value == 1
-                        ? 'HOME'
-                        : '호무',
+                label: textId.getTextContent(
+                    'LABEL_HOME', Get.find<SettingController>().language.value),
               ),
               BottomNavigationBarItem(
                 icon: const Icon(Icons.account_box_outlined),
-                label: Get.find<SettingController>().language.value == 0
-                    ? '경력'
-                    : Get.find<SettingController>().language.value == 1
-                        ? 'ABOUT'
-                        : '호무',
+                label: textId.getTextContent('LABEL_ABOUT',
+                    Get.find<SettingController>().language.value),
               ),
               BottomNavigationBarItem(
                 icon: const Icon(Icons.work_history_outlined),
-                label: Get.find<SettingController>().language.value == 0
-                    ? '프로젝트'
-                    : Get.find<SettingController>().language.value == 1
-                        ? 'PROJECT'
-                        : '호무',
+                label: textId.getTextContent('LABEL_PROJECT',
+                    Get.find<SettingController>().language.value),
               ),
               BottomNavigationBarItem(
                 icon: const Icon(Icons.contact_mail_outlined),
-                label: Get.find<SettingController>().language.value == 0
-                    ? '연락처'
-                    : Get.find<SettingController>().language.value == 1
-                        ? 'CONTACTS'
-                        : '호무',
+                label: textId.getTextContent('LABEL_CONTACT',
+                    Get.find<SettingController>().language.value),
               ),
             ],
             currentIndex: navIndex,

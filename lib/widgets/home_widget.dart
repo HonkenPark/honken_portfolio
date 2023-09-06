@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:honken_portfolio/controllers/setting_controller.dart';
+import 'package:honken_portfolio/model/text_id_model.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -12,6 +13,7 @@ class HomeWidget extends StatefulWidget {
 class _HomeWidgetState extends State<HomeWidget> {
   @override
   Widget build(BuildContext context) {
+    TextIdModel textId = TextIdModel();
     Get.put(SettingController());
     return Expanded(
       child: GetBuilder<SettingController>(
@@ -22,14 +24,15 @@ class _HomeWidgetState extends State<HomeWidget> {
             Flexible(
               flex: 5,
               child: Container(
-                width: 400,
-                height: 400,
+                width: MediaQuery.of(context).size.width * 0.3,
+                height: MediaQuery.of(context).size.width * 0.3,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    width: 10,
+                    width: MediaQuery.of(context).size.width * 0.01,
                     color: Colors.white,
                   ),
-                  borderRadius: BorderRadius.circular(200),
+                  borderRadius: BorderRadius.circular(
+                      MediaQuery.of(context).size.width * 0.2),
                   image: const DecorationImage(
                     image: AssetImage('assets/img/profile.jpg'),
                     fit: BoxFit.fill,
@@ -37,17 +40,22 @@ class _HomeWidgetState extends State<HomeWidget> {
                 ),
               ),
             ),
-            const SizedBox(
-              width: 30,
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.1,
             ),
-            const Flexible(
+            Flexible(
               flex: 5,
-              child: Text(
-                '방문해주셔서 감사합니다.\n항상 발전을 갈망하고,\n변화에 대응하는 Flexible을\n갖춘 developer,\n\n박홍근의 포트폴리오입니다.',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                  color: Colors.white,
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.4,
+                height: MediaQuery.of(context).size.width * 0.2,
+                child: Text(
+                  textId.getTextContent('HOME_GREETING',
+                      Get.find<SettingController>().language.value),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: MediaQuery.of(context).size.width * 0.025,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
