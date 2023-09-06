@@ -3,6 +3,11 @@ import 'dart:convert';
 class TextIdModel {
   String jsonString = '''
   {
+    "TOAST_MAIL_COPIED": [
+      "메일주소가 클립보드에 복사되었습니다.",
+      "The e-mail is copied into clipboard.",
+      "メールアドレスがクリップボードにコピーされました。"
+    ],
     "LABEL_HOME": [
       "홈",
       "HOME",
