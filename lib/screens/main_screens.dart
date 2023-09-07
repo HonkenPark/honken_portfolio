@@ -52,7 +52,7 @@ class _MainScreenState extends State<MainScreen> {
         child: Scaffold(
           backgroundColor: Get.find<SettingController>().theme.value == 0
               ? const Color(0xFF2F4164)
-              : const Color(0xFFFF9494),
+              : const Color(0xFFF19999),
           body: Column(
             children: [
               Settings(
