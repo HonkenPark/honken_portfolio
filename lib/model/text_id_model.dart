@@ -30,7 +30,7 @@ class TextIdModel {
     ],
     "HOME_GREETING": [
       "방문해주셔서 감사합니다.\\n항상 발전을 갈망하고,\\n변화에 대응하는 Flexible을\\n갖춘 developer,\\n\\n박홍근의 포트폴리오입니다.\\n\\n",
-      "Portfolio: Honken Park's who is..\\n\\n👉Constantly seeks improvement and embraces change.\\n👉Striving to be flexible in adapting to new challenges.\\n👉Embodies these all qualities.\\n\\n",
+      "Portfolio: Honken Park's who is..\\n\\n· Constantly seeks improvement and embraces change.\\n· Striving to be flexible in adapting to new challenges.\\n· Embodies these all qualities.\\n\\n",
       "コンニチハ、\\n\\n私は常に向上を追求し、変化に対応する柔軟性を大切にする開発者です。新しい課題に適応する柔軟性を持つことを心がけています。\\n\\nこれはそのような開発者、\\n朴鴻根のポートフォリオです\\n\\n"
     ],
     "PROJECT_HISTORY_1": [

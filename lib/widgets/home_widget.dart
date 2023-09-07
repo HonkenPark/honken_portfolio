@@ -45,17 +45,15 @@ class _HomeWidgetState extends State<HomeWidget> {
             ),
             Flexible(
               flex: 5,
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.4,
-                height: MediaQuery.of(context).size.width * 0.2,
-                child: Text(
+              child: Container(
+                alignment: Alignment.center,
+                width: MediaQuery.of(context).size.width * 0.42,
+                height: MediaQuery.of(context).size.width * 0.3,
+                child: buildRichText(
                   textId.getTextContent('HOME_GREETING',
                       Get.find<SettingController>().language.value),
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: MediaQuery.of(context).size.width * 0.025,
-                    color: Colors.white,
-                  ),
+                  Get.find<SettingController>().language.value,
+                  MediaQuery.of(context).size.width * 0.025,
                 ),
               ),
             ),
@@ -64,4 +62,44 @@ class _HomeWidgetState extends State<HomeWidget> {
       ),
     );
   }
+}
+
+RichText buildRichText(String textContent, int langIdx, double fontSize) {
+  List<String> splitText = [
+    '박홍근',
+    'Honken Park',
+    '朴鴻根',
+  ];
+  List<String> parts = textContent.split(splitText[langIdx]);
+
+  TextStyle normalStyle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: fontSize,
+    color: Colors.white,
+  );
+
+  TextStyle specialStyle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: fontSize,
+    color: const Color(0xFFFF6347),
+  );
+
+  return RichText(
+    text: TextSpan(
+      children: [
+        TextSpan(
+          text: parts[0],
+          style: normalStyle,
+        ),
+        TextSpan(
+          text: splitText[langIdx],
+          style: specialStyle,
+        ),
+        TextSpan(
+          text: parts[1],
+          style: normalStyle,
+        ),
+      ],
+    ),
+  );
 }

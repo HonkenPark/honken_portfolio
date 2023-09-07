@@ -12,6 +12,7 @@ class ProjectWidget extends StatefulWidget {
 }
 
 class _ProjectWidgetState extends State<ProjectWidget> {
+  int selectedProjectNum = 0;
   TextIdModel textId = TextIdModel();
   bool isHover1 = false,
       isHover2 = false,
@@ -47,15 +48,22 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                         isHover1 = false;
                       });
                     },
-                    child: Text(
-                      textId.getTextContent(
-                        'PROJECT_HISTORY_1',
-                        Get.find<SettingController>().language.value,
-                      ),
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: MediaQuery.of(context).size.width * 0.012,
-                        color: isHover1 ? Colors.blue : Colors.white,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedProjectNum = 1;
+                        });
+                      },
+                      child: Text(
+                        textId.getTextContent(
+                          'PROJECT_HISTORY_1',
+                          Get.find<SettingController>().language.value,
+                        ),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.width * 0.012,
+                          color: isHover1 ? Colors.blue : Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -70,15 +78,22 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                         isHover2 = false;
                       });
                     },
-                    child: Text(
-                      textId.getTextContent(
-                        'PROJECT_HISTORY_2',
-                        Get.find<SettingController>().language.value,
-                      ),
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: MediaQuery.of(context).size.width * 0.012,
-                        color: isHover2 ? Colors.blue : Colors.white,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedProjectNum = 2;
+                        });
+                      },
+                      child: Text(
+                        textId.getTextContent(
+                          'PROJECT_HISTORY_2',
+                          Get.find<SettingController>().language.value,
+                        ),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.width * 0.012,
+                          color: isHover2 ? Colors.blue : Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -93,15 +108,22 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                         isHover3 = false;
                       });
                     },
-                    child: Text(
-                      textId.getTextContent(
-                        'PROJECT_HISTORY_3',
-                        Get.find<SettingController>().language.value,
-                      ),
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: MediaQuery.of(context).size.width * 0.012,
-                        color: isHover3 ? Colors.blue : Colors.white,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedProjectNum = 3;
+                        });
+                      },
+                      child: Text(
+                        textId.getTextContent(
+                          'PROJECT_HISTORY_3',
+                          Get.find<SettingController>().language.value,
+                        ),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.width * 0.012,
+                          color: isHover3 ? Colors.blue : Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -116,15 +138,22 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                         isHover4 = false;
                       });
                     },
-                    child: Text(
-                      textId.getTextContent(
-                        'PROJECT_HISTORY_4',
-                        Get.find<SettingController>().language.value,
-                      ),
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: MediaQuery.of(context).size.width * 0.012,
-                        color: isHover4 ? Colors.blue : Colors.white,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedProjectNum = 4;
+                        });
+                      },
+                      child: Text(
+                        textId.getTextContent(
+                          'PROJECT_HISTORY_4',
+                          Get.find<SettingController>().language.value,
+                        ),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.width * 0.012,
+                          color: isHover4 ? Colors.blue : Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -139,15 +168,22 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                         isHover5 = false;
                       });
                     },
-                    child: Text(
-                      textId.getTextContent(
-                        'PROJECT_HISTORY_5',
-                        Get.find<SettingController>().language.value,
-                      ),
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: MediaQuery.of(context).size.width * 0.012,
-                        color: isHover5 ? Colors.blue : Colors.white,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedProjectNum = 5;
+                        });
+                      },
+                      child: Text(
+                        textId.getTextContent(
+                          'PROJECT_HISTORY_5',
+                          Get.find<SettingController>().language.value,
+                        ),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.width * 0.012,
+                          color: isHover5 ? Colors.blue : Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -162,15 +198,22 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                         isHover6 = false;
                       });
                     },
-                    child: Text(
-                      textId.getTextContent(
-                        'PROJECT_HISTORY_6',
-                        Get.find<SettingController>().language.value,
-                      ),
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: MediaQuery.of(context).size.width * 0.012,
-                        color: isHover6 ? Colors.blue : Colors.white,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedProjectNum = 6;
+                        });
+                      },
+                      child: Text(
+                        textId.getTextContent(
+                          'PROJECT_HISTORY_6',
+                          Get.find<SettingController>().language.value,
+                        ),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.width * 0.012,
+                          color: isHover6 ? Colors.blue : Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -196,8 +239,8 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                     width: MediaQuery.of(context).size.width * 0.4,
                     height: MediaQuery.of(context).size.height * 0.72,
                     color: Colors.white,
-                    child: const TechGridViewWidget(
-                      selectedProject: 5,
+                    child: TechGridViewWidget(
+                      selectedProject: selectedProjectNum,
                     ),
                   ),
                 ],
