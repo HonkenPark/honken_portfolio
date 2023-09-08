@@ -65,181 +65,382 @@ class _ContactWidgetState extends State<ContactWidget> {
   @override
   Widget build(BuildContext context) {
     Get.put(SettingController());
+    bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return Expanded(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              MouseRegion(
-                onEnter: (_) {
-                  setState(() {
-                    isHover1 = true;
-                  });
-                },
-                onExit: (_) {
-                  setState(() {
-                    isHover1 = false; // 호버 종료 시 테두리 제거
-                  });
-                },
-                child: GestureDetector(
-                  onTap: () {
-                    _launchUrl('https://github.com/HonkenPark');
+          if (isPortrait)
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHover1 = true;
+                    });
                   },
-                  child: Column(
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.08,
-                        height: MediaQuery.of(context).size.width * 0.08,
-                        decoration: BoxDecoration(
-                          border: isHover1
-                              ? Border.all(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.003,
-                                  color: Colors.white)
-                              : const Border.symmetric(),
-                          image: const DecorationImage(
-                            image: AssetImage(
-                                'assets/img/contact_github_white.png'),
-                            fit: BoxFit.fill,
+                  onExit: (_) {
+                    setState(() {
+                      isHover1 = false; // 호버 종료 시 테두리 제거
+                    });
+                  },
+                  child: GestureDetector(
+                    onTap: () {
+                      _launchUrl('https://github.com/HonkenPark');
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.15,
+                          height: MediaQuery.of(context).size.width * 0.15,
+                          decoration: BoxDecoration(
+                            border: isHover1
+                                ? Border.all(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.003,
+                                    color: Colors.white)
+                                : const Border.symmetric(),
+                            image: const DecorationImage(
+                              image: AssetImage(
+                                  'assets/img/contact_github_white.png'),
+                              fit: BoxFit.fill,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              MouseRegion(
-                onEnter: (_) {
-                  setState(() {
-                    isHover2 = true;
-                  });
-                },
-                onExit: (_) {
-                  setState(() {
-                    isHover2 = false; // 호버 종료 시 테두리 제거
-                  });
-                },
-                child: GestureDetector(
-                  onTap: () {
-                    _launchUrl('https://www.linkedin.com/in/honken-park');
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+                MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHover2 = true;
+                    });
                   },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.08,
-                    height: MediaQuery.of(context).size.width * 0.08,
-                    decoration: BoxDecoration(
-                      border: isHover2
-                          ? Border.all(
-                              width: MediaQuery.of(context).size.width * 0.003,
-                              color: Colors.white)
-                          : const Border.symmetric(),
-                      image: const DecorationImage(
-                        image:
-                            AssetImage('assets/img/contact_linkedin_white.png'),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              MouseRegion(
-                onEnter: (_) {
-                  setState(() {
-                    isHover3 = true;
-                  });
-                },
-                onExit: (_) {
-                  setState(() {
-                    isHover3 = false; // 호버 종료 시 테두리 제거
-                  });
-                },
-                child: GestureDetector(
-                  onTap: () {
-                    _launchUrl('https://honken.tistory.com');
+                  onExit: (_) {
+                    setState(() {
+                      isHover2 = false; // 호버 종료 시 테두리 제거
+                    });
                   },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.08,
-                    height: MediaQuery.of(context).size.width * 0.08,
-                    decoration: BoxDecoration(
-                      border: isHover3
-                          ? Border.all(
-                              width: MediaQuery.of(context).size.width * 0.003,
-                              color: Colors.white)
-                          : const Border.symmetric(),
-                      image: const DecorationImage(
-                        image:
-                            AssetImage('assets/img/contact_tistory_white.png'),
-                        fit: BoxFit.fill,
+                  child: GestureDetector(
+                    onTap: () {
+                      _launchUrl('https://www.linkedin.com/in/honken-park');
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.15,
+                      height: MediaQuery.of(context).size.width * 0.15,
+                      decoration: BoxDecoration(
+                        border: isHover2
+                            ? Border.all(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.003,
+                                color: Colors.white)
+                            : const Border.symmetric(),
+                        image: const DecorationImage(
+                          image: AssetImage(
+                              'assets/img/contact_linkedin_white.png'),
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              MouseRegion(
-                onEnter: (_) {
-                  setState(() {
-                    isHover4 = true;
-                  });
-                },
-                onExit: (_) {
-                  setState(() {
-                    isHover4 = false; // 호버 종료 시 테두리 제거
-                  });
-                },
-                child: GestureDetector(
-                  onTap: () {
-                    _launchUrl('https://www.figma.com/@honkenpark');
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+                MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHover3 = true;
+                    });
                   },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.08,
-                    height: MediaQuery.of(context).size.width * 0.08,
-                    decoration: BoxDecoration(
-                      border: isHover4
-                          ? Border.all(
-                              width: MediaQuery.of(context).size.width * 0.003,
-                              color: Colors.white)
-                          : const Border.symmetric(),
-                      image: const DecorationImage(
-                        image: AssetImage('assets/img/contact_figma_white.png'),
-                        fit: BoxFit.fill,
+                  onExit: (_) {
+                    setState(() {
+                      isHover3 = false; // 호버 종료 시 테두리 제거
+                    });
+                  },
+                  child: GestureDetector(
+                    onTap: () {
+                      _launchUrl('https://honken.tistory.com');
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.15,
+                      height: MediaQuery.of(context).size.width * 0.15,
+                      decoration: BoxDecoration(
+                        border: isHover3
+                            ? Border.all(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.003,
+                                color: Colors.white)
+                            : const Border.symmetric(),
+                        image: const DecorationImage(
+                          image: AssetImage(
+                              'assets/img/contact_tistory_white.png'),
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              MouseRegion(
-                onEnter: (_) {
-                  setState(() {
-                    isHover5 = true;
-                  });
-                },
-                onExit: (_) {
-                  setState(() {
-                    isHover5 = false; // 호버 종료 시 테두리 제거
-                  });
-                },
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.08,
-                    height: MediaQuery.of(context).size.width * 0.08,
-                    decoration: BoxDecoration(
-                      border: isHover5
-                          ? Border.all(
-                              width: MediaQuery.of(context).size.width * 0.003,
-                              color: Colors.white)
-                          : const Border.symmetric(),
-                      image: const DecorationImage(
-                        image: AssetImage('assets/img/contact_hr_white.png'),
-                        fit: BoxFit.fill,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+                MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHover4 = true;
+                    });
+                  },
+                  onExit: (_) {
+                    setState(() {
+                      isHover4 = false; // 호버 종료 시 테두리 제거
+                    });
+                  },
+                  child: GestureDetector(
+                    onTap: () {
+                      _launchUrl('https://www.figma.com/@honkenpark');
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.15,
+                      height: MediaQuery.of(context).size.width * 0.15,
+                      decoration: BoxDecoration(
+                        border: isHover4
+                            ? Border.all(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.003,
+                                color: Colors.white)
+                            : const Border.symmetric(),
+                        image: const DecorationImage(
+                          image:
+                              AssetImage('assets/img/contact_figma_white.png'),
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+                MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHover5 = true;
+                    });
+                  },
+                  onExit: (_) {
+                    setState(() {
+                      isHover5 = false; // 호버 종료 시 테두리 제거
+                    });
+                  },
+                  child: GestureDetector(
+                    onTap: () {
+                      _launchUrl('https://www.hackerrank.com/Honken_Park');
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.15,
+                      height: MediaQuery.of(context).size.width * 0.15,
+                      decoration: BoxDecoration(
+                        border: isHover5
+                            ? Border.all(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.003,
+                                color: Colors.white)
+                            : const Border.symmetric(),
+                        image: const DecorationImage(
+                          image: AssetImage('assets/img/contact_hr_white.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          if (!isPortrait)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHover1 = true;
+                    });
+                  },
+                  onExit: (_) {
+                    setState(() {
+                      isHover1 = false; // 호버 종료 시 테두리 제거
+                    });
+                  },
+                  child: GestureDetector(
+                    onTap: () {
+                      _launchUrl('https://github.com/HonkenPark');
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.08,
+                          height: MediaQuery.of(context).size.width * 0.08,
+                          decoration: BoxDecoration(
+                            border: isHover1
+                                ? Border.all(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.003,
+                                    color: Colors.white)
+                                : const Border.symmetric(),
+                            image: const DecorationImage(
+                              image: AssetImage(
+                                  'assets/img/contact_github_white.png'),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHover2 = true;
+                    });
+                  },
+                  onExit: (_) {
+                    setState(() {
+                      isHover2 = false; // 호버 종료 시 테두리 제거
+                    });
+                  },
+                  child: GestureDetector(
+                    onTap: () {
+                      _launchUrl('https://www.linkedin.com/in/honken-park');
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.08,
+                      height: MediaQuery.of(context).size.width * 0.08,
+                      decoration: BoxDecoration(
+                        border: isHover2
+                            ? Border.all(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.003,
+                                color: Colors.white)
+                            : const Border.symmetric(),
+                        image: const DecorationImage(
+                          image: AssetImage(
+                              'assets/img/contact_linkedin_white.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHover3 = true;
+                    });
+                  },
+                  onExit: (_) {
+                    setState(() {
+                      isHover3 = false; // 호버 종료 시 테두리 제거
+                    });
+                  },
+                  child: GestureDetector(
+                    onTap: () {
+                      _launchUrl('https://honken.tistory.com');
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.08,
+                      height: MediaQuery.of(context).size.width * 0.08,
+                      decoration: BoxDecoration(
+                        border: isHover3
+                            ? Border.all(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.003,
+                                color: Colors.white)
+                            : const Border.symmetric(),
+                        image: const DecorationImage(
+                          image: AssetImage(
+                              'assets/img/contact_tistory_white.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHover4 = true;
+                    });
+                  },
+                  onExit: (_) {
+                    setState(() {
+                      isHover4 = false; // 호버 종료 시 테두리 제거
+                    });
+                  },
+                  child: GestureDetector(
+                    onTap: () {
+                      _launchUrl('https://www.figma.com/@honkenpark');
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.08,
+                      height: MediaQuery.of(context).size.width * 0.08,
+                      decoration: BoxDecoration(
+                        border: isHover4
+                            ? Border.all(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.003,
+                                color: Colors.white)
+                            : const Border.symmetric(),
+                        image: const DecorationImage(
+                          image:
+                              AssetImage('assets/img/contact_figma_white.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHover5 = true;
+                    });
+                  },
+                  onExit: (_) {
+                    setState(() {
+                      isHover5 = false; // 호버 종료 시 테두리 제거
+                    });
+                  },
+                  child: GestureDetector(
+                    onTap: () {
+                      _launchUrl('https://www.hackerrank.com/Honken_Park');
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.08,
+                      height: MediaQuery.of(context).size.width * 0.08,
+                      decoration: BoxDecoration(
+                        border: isHover5
+                            ? Border.all(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.003,
+                                color: Colors.white)
+                            : const Border.symmetric(),
+                        image: const DecorationImage(
+                          image: AssetImage('assets/img/contact_hr_white.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           SizedBox(
             height: MediaQuery.of(context).size.width * 0.15,
           ),

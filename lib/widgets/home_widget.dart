@@ -15,52 +15,104 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     TextIdModel textId = TextIdModel();
     Get.put(SettingController());
-    return Expanded(
-      child: GetBuilder<SettingController>(
-        builder: (_) => Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Flexible(
-              flex: 5,
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.3,
-                height: MediaQuery.of(context).size.width * 0.3,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: MediaQuery.of(context).size.width * 0.01,
-                    color: Colors.white,
-                  ),
-                  borderRadius: BorderRadius.circular(
-                      MediaQuery.of(context).size.width * 0.2),
-                  image: const DecorationImage(
-                    image: AssetImage('assets/img/profile.jpg'),
-                    fit: BoxFit.fill,
+    bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
+
+    if (isPortrait) {
+      return Expanded(
+        child: GetBuilder<SettingController>(
+          builder: (_) => Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Flexible(
+                flex: 5,
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.3,
+                  height: MediaQuery.of(context).size.width * 0.3,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: MediaQuery.of(context).size.width * 0.01,
+                      color: Colors.white,
+                    ),
+                    borderRadius: BorderRadius.circular(
+                        MediaQuery.of(context).size.width * 0.2),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/img/profile.jpg'),
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.1,
-            ),
-            Flexible(
-              flex: 5,
-              child: Container(
-                alignment: Alignment.center,
-                width: MediaQuery.of(context).size.width * 0.42,
-                height: MediaQuery.of(context).size.width * 0.3,
-                child: buildRichText(
-                  textId.getTextContent('HOME_GREETING',
-                      Get.find<SettingController>().language.value),
-                  Get.find<SettingController>().language.value,
-                  MediaQuery.of(context).size.width * 0.025,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.1,
+              ),
+              Flexible(
+                flex: 5,
+                child: Container(
+                  alignment: Alignment.center,
+                  width: MediaQuery.of(context).size.width * 0.42,
+                  height: MediaQuery.of(context).size.width * 0.3,
+                  child: buildRichText(
+                    textId.getTextContent('HOME_GREETING',
+                        Get.find<SettingController>().language.value),
+                    Get.find<SettingController>().language.value,
+                    MediaQuery.of(context).size.width * 0.025,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    } else {
+      return Expanded(
+        child: GetBuilder<SettingController>(
+          builder: (_) => Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Flexible(
+                flex: 5,
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.3,
+                  height: MediaQuery.of(context).size.width * 0.3,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: MediaQuery.of(context).size.width * 0.01,
+                      color: Colors.white,
+                    ),
+                    borderRadius: BorderRadius.circular(
+                        MediaQuery.of(context).size.width * 0.2),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/img/profile.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.1,
+              ),
+              Flexible(
+                flex: 5,
+                child: Container(
+                  alignment: Alignment.center,
+                  width: MediaQuery.of(context).size.width * 0.42,
+                  height: MediaQuery.of(context).size.width * 0.3,
+                  child: buildRichText(
+                    textId.getTextContent('HOME_GREETING',
+                        Get.find<SettingController>().language.value),
+                    Get.find<SettingController>().language.value,
+                    MediaQuery.of(context).size.width * 0.025,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
   }
 }
 
