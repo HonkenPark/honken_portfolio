@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:honken_portfolio/controllers/setting_controller.dart';
-import 'package:honken_portfolio/model/text_id_model.dart';
+import 'package:honken_portfolio/models/text_id_model.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -15,8 +15,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     TextIdModel textId = TextIdModel();
     Get.put(SettingController());
-    bool isPortrait =
-        MediaQuery.of(context).orientation == Orientation.portrait;
+    bool isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
 
     if (isPortrait) {
       return Expanded(
@@ -35,10 +34,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                       width: MediaQuery.of(context).size.width * 0.01,
                       color: Colors.white,
                     ),
-                    borderRadius: BorderRadius.circular(
-                        MediaQuery.of(context).size.width * 0.2),
+                    borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width * 0.2),
                     image: const DecorationImage(
-                      image: AssetImage('assets/img/profile.jpg'),
+                      image: AssetImage('assets/images/profile.jpg'),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -54,8 +52,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   width: MediaQuery.of(context).size.width * 0.42,
                   height: MediaQuery.of(context).size.width * 0.3,
                   child: buildRichText(
-                    textId.getTextContent('HOME_GREETING',
-                        Get.find<SettingController>().language.value),
+                    textId.getTextContent('HOME_GREETING', Get.find<SettingController>().language.value),
                     Get.find<SettingController>().language.value,
                     MediaQuery.of(context).size.width * 0.025,
                   ),
@@ -82,10 +79,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                       width: MediaQuery.of(context).size.width * 0.01,
                       color: Colors.white,
                     ),
-                    borderRadius: BorderRadius.circular(
-                        MediaQuery.of(context).size.width * 0.2),
+                    borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width * 0.2),
                     image: const DecorationImage(
-                      image: AssetImage('assets/img/profile.jpg'),
+                      image: AssetImage('assets/images/profile.jpg'),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -101,8 +97,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   width: MediaQuery.of(context).size.width * 0.42,
                   height: MediaQuery.of(context).size.width * 0.3,
                   child: buildRichText(
-                    textId.getTextContent('HOME_GREETING',
-                        Get.find<SettingController>().language.value),
+                    textId.getTextContent('HOME_GREETING', Get.find<SettingController>().language.value),
                     Get.find<SettingController>().language.value,
                     MediaQuery.of(context).size.width * 0.025,
                   ),

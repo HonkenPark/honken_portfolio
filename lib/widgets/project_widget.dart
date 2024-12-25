@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:honken_portfolio/controllers/setting_controller.dart';
-import 'package:honken_portfolio/model/text_id_model.dart';
+import 'package:honken_portfolio/models/text_id_model.dart';
 import 'package:honken_portfolio/widgets/tech_gridview_widget.dart';
 
 class ProjectWidget extends StatefulWidget {
@@ -14,12 +14,7 @@ class ProjectWidget extends StatefulWidget {
 class _ProjectWidgetState extends State<ProjectWidget> {
   int selectedProjectNum = 0;
   TextIdModel textId = TextIdModel();
-  bool isHover1 = false,
-      isHover2 = false,
-      isHover3 = false,
-      isHover4 = false,
-      isHover5 = false,
-      isHover6 = false;
+  bool isHover1 = false, isHover2 = false, isHover3 = false, isHover4 = false, isHover5 = false, isHover6 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -227,8 +222,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    textId.getTextContent('PROJECT_TECH',
-                        Get.find<SettingController>().language.value),
+                    textId.getTextContent('PROJECT_TECH', Get.find<SettingController>().language.value),
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: MediaQuery.of(context).size.width * 0.02,

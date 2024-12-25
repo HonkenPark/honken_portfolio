@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:honken_portfolio/controllers/setting_controller.dart';
-import 'package:honken_portfolio/model/text_id_model.dart';
+import 'package:honken_portfolio/models/text_id_model.dart';
 
 class AboutWidget extends StatefulWidget {
   const AboutWidget({super.key});

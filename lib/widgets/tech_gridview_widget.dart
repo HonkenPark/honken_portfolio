@@ -1,26 +1,26 @@
 import 'package:flutter/widgets.dart';
 
 List<Map<String, dynamic>> imgPath = [
-  {'path': 'assets/img/qt.png', 'enable': false},
-  {'path': 'assets/img/c.png', 'enable': false},
-  {'path': 'assets/img/cpp.png', 'enable': false},
-  {'path': 'assets/img/python.png', 'enable': false},
-  {'path': 'assets/img/html.png', 'enable': false},
-  {'path': 'assets/img/css.png', 'enable': false},
-  {'path': 'assets/img/javascript.png', 'enable': false},
-  {'path': 'assets/img/react.png', 'enable': false},
-  {'path': 'assets/img/jquery.png', 'enable': false},
-  {'path': 'assets/img/nodejs.png', 'enable': false},
-  {'path': 'assets/img/bootstrap.png', 'enable': false},
-  {'path': 'assets/img/antd.png', 'enable': false},
-  {'path': 'assets/img/nginx.png', 'enable': false},
-  {'path': 'assets/img/dart.png', 'enable': false},
-  {'path': 'assets/img/flutter.png', 'enable': false},
-  {'path': 'assets/img/postgre.png', 'enable': false},
-  {'path': 'assets/img/figma.png', 'enable': false},
-  {'path': 'assets/img/ps.png', 'enable': false},
-  {'path': 'assets/img/git.png', 'enable': false},
-  {'path': 'assets/img/svn.png', 'enable': false}
+  {'path': 'assets/images/qt.png', 'enable': false},
+  {'path': 'assets/images/c.png', 'enable': false},
+  {'path': 'assets/images/cpp.png', 'enable': false},
+  {'path': 'assets/images/python.png', 'enable': false},
+  {'path': 'assets/images/html.png', 'enable': false},
+  {'path': 'assets/images/css.png', 'enable': false},
+  {'path': 'assets/images/javascript.png', 'enable': false},
+  {'path': 'assets/images/react.png', 'enable': false},
+  {'path': 'assets/images/jquery.png', 'enable': false},
+  {'path': 'assets/images/nodejs.png', 'enable': false},
+  {'path': 'assets/images/bootstrap.png', 'enable': false},
+  {'path': 'assets/images/antd.png', 'enable': false},
+  {'path': 'assets/images/nginx.png', 'enable': false},
+  {'path': 'assets/images/dart.png', 'enable': false},
+  {'path': 'assets/images/flutter.png', 'enable': false},
+  {'path': 'assets/images/postgre.png', 'enable': false},
+  {'path': 'assets/images/figma.png', 'enable': false},
+  {'path': 'assets/images/ps.png', 'enable': false},
+  {'path': 'assets/images/git.png', 'enable': false},
+  {'path': 'assets/images/svn.png', 'enable': false}
 ];
 
 class TechGridViewWidget extends StatefulWidget {
@@ -53,39 +53,17 @@ bool enabledItem(int projectNum, int index) {
       }
       break;
     case 4:
-      if (index == 4 ||
-          index == 5 ||
-          index == 6 ||
-          index == 8 ||
-          index == 10 ||
-          index == 17 ||
-          index == 18) {
+      if (index == 4 || index == 5 || index == 6 || index == 8 || index == 10 || index == 17 || index == 18) {
         ret = true;
       }
       break;
     case 5:
-      if (index == 3 ||
-          index == 5 ||
-          index == 6 ||
-          index == 7 ||
-          index == 11 ||
-          index == 12 ||
-          index == 16 ||
-          index == 17 ||
-          index == 18) {
+      if (index == 3 || index == 5 || index == 6 || index == 7 || index == 11 || index == 12 || index == 16 || index == 17 || index == 18) {
         ret = true;
       }
       break;
     case 6:
-      if (index == 6 ||
-          index == 9 ||
-          index == 12 ||
-          index == 13 ||
-          index == 14 ||
-          index == 15 ||
-          index == 16 ||
-          index == 17 ||
-          index == 18) {
+      if (index == 6 || index == 9 || index == 12 || index == 13 || index == 14 || index == 15 || index == 16 || index == 17 || index == 18) {
         ret = true;
       }
       break;
@@ -125,8 +103,7 @@ class _TechGridViewWidgetState extends State<TechGridViewWidget> {
 
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> techImageList =
-        sortImgPath(widget.selectedProject);
+    List<Map<String, dynamic>> techImageList = sortImgPath(widget.selectedProject);
 
     return GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

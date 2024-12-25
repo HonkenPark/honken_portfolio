@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:honken_portfolio/controllers/setting_controller.dart';
-import 'package:honken_portfolio/model/text_id_model.dart';
+import 'package:honken_portfolio/models/text_id_model.dart';
 import 'package:honken_portfolio/widgets/about_widget.dart';
 import 'package:honken_portfolio/widgets/contact_widget.dart';
 import 'package:honken_portfolio/widgets/home_widget.dart';
@@ -50,9 +50,7 @@ class _MainScreenState extends State<MainScreen> {
       builder: (_) => GestureDetector(
         onTap: Get.find<SettingController>().initSetting,
         child: Scaffold(
-          backgroundColor: Get.find<SettingController>().theme.value == 0
-              ? const Color(0xFF2F4164)
-              : const Color(0xFFF19999),
+          backgroundColor: Get.find<SettingController>().theme.value == 0 ? const Color(0xFF1E1E1E) : const Color(0xFFF19999),
           body: Column(
             children: [
               Settings(
@@ -66,23 +64,19 @@ class _MainScreenState extends State<MainScreen> {
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: const Icon(Icons.home_outlined),
-                label: textId.getTextContent(
-                    'LABEL_HOME', Get.find<SettingController>().language.value),
+                label: textId.getTextContent('LABEL_HOME', Get.find<SettingController>().language.value),
               ),
               BottomNavigationBarItem(
                 icon: const Icon(Icons.account_box_outlined),
-                label: textId.getTextContent('LABEL_ABOUT',
-                    Get.find<SettingController>().language.value),
+                label: textId.getTextContent('LABEL_ABOUT', Get.find<SettingController>().language.value),
               ),
               BottomNavigationBarItem(
                 icon: const Icon(Icons.work_history_outlined),
-                label: textId.getTextContent('LABEL_PROJECT',
-                    Get.find<SettingController>().language.value),
+                label: textId.getTextContent('LABEL_PROJECT', Get.find<SettingController>().language.value),
               ),
               BottomNavigationBarItem(
                 icon: const Icon(Icons.contact_mail_outlined),
-                label: textId.getTextContent('LABEL_CONTACT',
-                    Get.find<SettingController>().language.value),
+                label: textId.getTextContent('LABEL_CONTACT', Get.find<SettingController>().language.value),
               ),
             ],
             currentIndex: navIndex,

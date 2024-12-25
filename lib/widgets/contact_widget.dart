@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:honken_portfolio/model/text_id_model.dart';
+import 'package:honken_portfolio/models/text_id_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:honken_portfolio/controllers/setting_controller.dart';
 
@@ -16,12 +16,7 @@ class ContactWidget extends StatefulWidget {
 class _ContactWidgetState extends State<ContactWidget> {
   TextIdModel textId = TextIdModel();
   FToast fToast = FToast();
-  bool isHover1 = false,
-      isHover2 = false,
-      isHover3 = false,
-      isHover4 = false,
-      isHover5 = false,
-      isHoverMail = false;
+  bool isHover1 = false, isHover2 = false, isHover3 = false, isHover4 = false, isHover5 = false, isHoverMail = false;
 
   @override
   void initState() {
@@ -44,13 +39,11 @@ class _ContactWidgetState extends State<ContactWidget> {
           vertical: MediaQuery.of(context).size.width * 0.01,
         ),
         decoration: BoxDecoration(
-          borderRadius:
-              BorderRadius.circular(MediaQuery.of(context).size.width),
+          borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width),
           color: const Color(0xFF666666),
         ),
         child: Text(
-          textId.getTextContent('TOAST_MAIL_COPIED',
-              Get.find<SettingController>().language.value),
+          textId.getTextContent('TOAST_MAIL_COPIED', Get.find<SettingController>().language.value),
           style: TextStyle(
             fontSize: MediaQuery.of(context).size.width * 0.01,
             color: Colors.white,
@@ -65,8 +58,7 @@ class _ContactWidgetState extends State<ContactWidget> {
   @override
   Widget build(BuildContext context) {
     Get.put(SettingController());
-    bool isPortrait =
-        MediaQuery.of(context).orientation == Orientation.portrait;
+    bool isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return Expanded(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -96,15 +88,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                           width: MediaQuery.of(context).size.width * 0.15,
                           height: MediaQuery.of(context).size.width * 0.15,
                           decoration: BoxDecoration(
-                            border: isHover1
-                                ? Border.all(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.003,
-                                    color: Colors.white)
-                                : const Border.symmetric(),
+                            border: isHover1 ? Border.all(width: MediaQuery.of(context).size.width * 0.003, color: Colors.white) : const Border.symmetric(),
                             image: const DecorationImage(
-                              image: AssetImage(
-                                  'assets/img/contact_github_white.png'),
+                              image: AssetImage('assets/images/contact_github_white.png'),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -135,15 +121,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                       width: MediaQuery.of(context).size.width * 0.15,
                       height: MediaQuery.of(context).size.width * 0.15,
                       decoration: BoxDecoration(
-                        border: isHover2
-                            ? Border.all(
-                                width:
-                                    MediaQuery.of(context).size.width * 0.003,
-                                color: Colors.white)
-                            : const Border.symmetric(),
+                        border: isHover2 ? Border.all(width: MediaQuery.of(context).size.width * 0.003, color: Colors.white) : const Border.symmetric(),
                         image: const DecorationImage(
-                          image: AssetImage(
-                              'assets/img/contact_linkedin_white.png'),
+                          image: AssetImage('assets/images/contact_linkedin_white.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -172,15 +152,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                       width: MediaQuery.of(context).size.width * 0.15,
                       height: MediaQuery.of(context).size.width * 0.15,
                       decoration: BoxDecoration(
-                        border: isHover3
-                            ? Border.all(
-                                width:
-                                    MediaQuery.of(context).size.width * 0.003,
-                                color: Colors.white)
-                            : const Border.symmetric(),
+                        border: isHover3 ? Border.all(width: MediaQuery.of(context).size.width * 0.003, color: Colors.white) : const Border.symmetric(),
                         image: const DecorationImage(
-                          image: AssetImage(
-                              'assets/img/contact_tistory_white.png'),
+                          image: AssetImage('assets/images/contact_tistory_white.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -209,15 +183,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                       width: MediaQuery.of(context).size.width * 0.15,
                       height: MediaQuery.of(context).size.width * 0.15,
                       decoration: BoxDecoration(
-                        border: isHover4
-                            ? Border.all(
-                                width:
-                                    MediaQuery.of(context).size.width * 0.003,
-                                color: Colors.white)
-                            : const Border.symmetric(),
+                        border: isHover4 ? Border.all(width: MediaQuery.of(context).size.width * 0.003, color: Colors.white) : const Border.symmetric(),
                         image: const DecorationImage(
-                          image:
-                              AssetImage('assets/img/contact_figma_white.png'),
+                          image: AssetImage('assets/images/contact_figma_white.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -246,14 +214,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                       width: MediaQuery.of(context).size.width * 0.15,
                       height: MediaQuery.of(context).size.width * 0.15,
                       decoration: BoxDecoration(
-                        border: isHover5
-                            ? Border.all(
-                                width:
-                                    MediaQuery.of(context).size.width * 0.003,
-                                color: Colors.white)
-                            : const Border.symmetric(),
+                        border: isHover5 ? Border.all(width: MediaQuery.of(context).size.width * 0.003, color: Colors.white) : const Border.symmetric(),
                         image: const DecorationImage(
-                          image: AssetImage('assets/img/contact_hr_white.png'),
+                          image: AssetImage('assets/images/contact_hr_white.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -287,15 +250,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                           width: MediaQuery.of(context).size.width * 0.08,
                           height: MediaQuery.of(context).size.width * 0.08,
                           decoration: BoxDecoration(
-                            border: isHover1
-                                ? Border.all(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.003,
-                                    color: Colors.white)
-                                : const Border.symmetric(),
+                            border: isHover1 ? Border.all(width: MediaQuery.of(context).size.width * 0.003, color: Colors.white) : const Border.symmetric(),
                             image: const DecorationImage(
-                              image: AssetImage(
-                                  'assets/img/contact_github_white.png'),
+                              image: AssetImage('assets/images/contact_github_white.png'),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -323,15 +280,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                       width: MediaQuery.of(context).size.width * 0.08,
                       height: MediaQuery.of(context).size.width * 0.08,
                       decoration: BoxDecoration(
-                        border: isHover2
-                            ? Border.all(
-                                width:
-                                    MediaQuery.of(context).size.width * 0.003,
-                                color: Colors.white)
-                            : const Border.symmetric(),
+                        border: isHover2 ? Border.all(width: MediaQuery.of(context).size.width * 0.003, color: Colors.white) : const Border.symmetric(),
                         image: const DecorationImage(
-                          image: AssetImage(
-                              'assets/img/contact_linkedin_white.png'),
+                          image: AssetImage('assets/images/contact_linkedin_white.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -357,15 +308,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                       width: MediaQuery.of(context).size.width * 0.08,
                       height: MediaQuery.of(context).size.width * 0.08,
                       decoration: BoxDecoration(
-                        border: isHover3
-                            ? Border.all(
-                                width:
-                                    MediaQuery.of(context).size.width * 0.003,
-                                color: Colors.white)
-                            : const Border.symmetric(),
+                        border: isHover3 ? Border.all(width: MediaQuery.of(context).size.width * 0.003, color: Colors.white) : const Border.symmetric(),
                         image: const DecorationImage(
-                          image: AssetImage(
-                              'assets/img/contact_tistory_white.png'),
+                          image: AssetImage('assets/images/contact_tistory_white.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -391,15 +336,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                       width: MediaQuery.of(context).size.width * 0.08,
                       height: MediaQuery.of(context).size.width * 0.08,
                       decoration: BoxDecoration(
-                        border: isHover4
-                            ? Border.all(
-                                width:
-                                    MediaQuery.of(context).size.width * 0.003,
-                                color: Colors.white)
-                            : const Border.symmetric(),
+                        border: isHover4 ? Border.all(width: MediaQuery.of(context).size.width * 0.003, color: Colors.white) : const Border.symmetric(),
                         image: const DecorationImage(
-                          image:
-                              AssetImage('assets/img/contact_figma_white.png'),
+                          image: AssetImage('assets/images/contact_figma_white.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -425,14 +364,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                       width: MediaQuery.of(context).size.width * 0.08,
                       height: MediaQuery.of(context).size.width * 0.08,
                       decoration: BoxDecoration(
-                        border: isHover5
-                            ? Border.all(
-                                width:
-                                    MediaQuery.of(context).size.width * 0.003,
-                                color: Colors.white)
-                            : const Border.symmetric(),
+                        border: isHover5 ? Border.all(width: MediaQuery.of(context).size.width * 0.003, color: Colors.white) : const Border.symmetric(),
                         image: const DecorationImage(
-                          image: AssetImage('assets/img/contact_hr_white.png'),
+                          image: AssetImage('assets/images/contact_hr_white.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
