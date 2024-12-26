@@ -5,6 +5,7 @@ import 'package:honken_portfolio/enums.dart';
 import 'package:honken_portfolio/views/about_screen.dart';
 import 'package:honken_portfolio/views/contact_screen.dart';
 import 'package:honken_portfolio/views/home_screen.dart';
+import 'package:honken_portfolio/views/project_screen.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class BaseScreen extends StatelessWidget {
@@ -34,7 +35,7 @@ class BaseScreen extends StatelessWidget {
                   Tab(text: '홈'),
                   Tab(text: '소개'),
                   Tab(text: '프로젝트'),
-                  Tab(text: '기술'),
+                  // Tab(text: '기술'),
                   Tab(text: '연락처'),
                 ],
               )
@@ -58,9 +59,9 @@ class BaseScreen extends StatelessWidget {
           case ScreenContentType.about:
             return const AboutScreen();
           case ScreenContentType.project:
-            return const Center(child: Text('project page'));
-          case ScreenContentType.skill:
-            return const Center(child: Text('skill page'));
+            return const ProjectScreen();
+          // case ScreenContentType.skill:
+          //   return const Center(child: Text('skill page'));
           case ScreenContentType.contact:
             return const ContactScreen();
         }

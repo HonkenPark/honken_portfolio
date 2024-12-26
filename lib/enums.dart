@@ -4,8 +4,8 @@ enum ScreenContentType {
   home(0, '홈', Icons.home),
   about(1, '소개', Icons.event_note),
   project(2, '프로젝트', Icons.work_history),
-  skill(3, '기술', Icons.lightbulb_rounded),
-  contact(4, '연락처', Icons.account_circle);
+  // skill(3, '기술', Icons.lightbulb_rounded),
+  contact(3, '연락처', Icons.account_circle);
   // home(0, 'HOME', Icons.home),
   // about(1, 'ABOUT', Icons.event_note),
   // project(2, 'PROJECT', Icons.work_history),
