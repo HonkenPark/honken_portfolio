@@ -21,7 +21,7 @@ class BaseScreen extends StatelessWidget {
             ? TabBar(
                 controller: baseController.tabController,
                 labelColor: Colors.white,
-                indicatorColor: Colors.indigo,
+                indicatorColor: Colors.blue,
                 tabAlignment: TabAlignment.center,
                 tabs: const [
                   Tab(text: 'HOME'),
@@ -47,7 +47,7 @@ class BaseScreen extends StatelessWidget {
         final selectedType = ScreenContentType.fromValue(baseController.selectedIndex.value);
         switch (selectedType) {
           case ScreenContentType.home:
-            return const HomeScreen();
+            return HomeScreen();
           case ScreenContentType.about:
             return const Center(child: Text('about page'));
           case ScreenContentType.project:

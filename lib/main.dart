@@ -31,7 +31,7 @@ class MainApp extends StatelessWidget {
         child: child!,
       ),
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
       title: 'Honken Park의 개발자 포트폴리오',
       initialRoute: '/',
