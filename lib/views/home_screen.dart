@@ -59,8 +59,10 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(height: 24.0),
                 const Text(
-                  'Honken Park',
+                  '프론트엔드 개발자 박홍근 입니다.',
+                  // 'Honken Park',
                   style: TextStyle(
                     fontSize: 36.0,
                     fontWeight: FontWeight.bold,
@@ -78,14 +80,15 @@ class HomeScreen extends StatelessWidget {
                     end: Alignment.bottomRight,
                   ).createShader(bounds),
                   child: const Text(
-                    '  Bridging web and mobile with technology, designing user-first solutions  ',
+                    '  웹과 모바일을 잇는 기술로 사용자 중심의 경험을 설계합니다.  ',
+                    // '  Bridging web and mobile with technology, designing user-first solutions  ',
                     style: TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.normal,
-                      color: Colors.white, // 기본 텍스트 색상
+                      color: Colors.white,
                     ),
                   ),
-                )
+                ),
               ],
             ),
             homeController.hr,

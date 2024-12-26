@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:honken_portfolio/views/base_screen.dart';
-import 'package:honken_portfolio/views/main.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
@@ -33,7 +32,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-      title: 'Honken Park의 개발자 포트폴리오',
+      title: '개발자 포트폴리오',
       initialRoute: '/',
       getPages: [
         GetPage(

@@ -28,7 +28,8 @@ class HomeController extends GetxController {
           SizedBox(width: 8.0),
           Flexible(
             child: Text(
-              'Flutter Expert: Extensive experience in cross-platform web and mobile app development.',
+              'Flutter 전문가: 웹·모바일 크로스 플랫폼 앱 개발 능력 보유',
+              // 'Flutter Expert: Extensive experience in cross-platform web and mobile app development.',
               style: TextStyle(
                 fontSize: 24.0,
                 color: Colors.white,
@@ -53,7 +54,8 @@ class HomeController extends GetxController {
           SizedBox(width: 8.0),
           Flexible(
             child: Text(
-              'ReactJS Leadership: Proven track record in leading SPA development projects.',
+              '개발 리더십: ReactJS 기반 SPA 개발 주도 및 팀 리딩 경험',
+              // 'Development Leadership: ReactJS-based SPA development leadership and team leading experience',
               style: TextStyle(
                 fontSize: 24.0,
                 color: Colors.white,
@@ -78,7 +80,8 @@ class HomeController extends GetxController {
           SizedBox(width: 8.0),
           Flexible(
             child: Text(
-              'UI/UX Strength: Proficient in Figma and Photoshop for user-centered design.',
+              'UI/UX 친화: Figma·Photoshop 활용, 사용자 중심 설계 가능',
+              // 'UI/UX Strength: Proficient in Figma and Photoshop for user-centered design.',
               style: TextStyle(
                 fontSize: 24.0,
                 color: Colors.white,
@@ -103,7 +106,8 @@ class HomeController extends GetxController {
           SizedBox(width: 8.0),
           Flexible(
             child: Text(
-              'Extensive Technical Experience: Broad development spectrum with diverse technical expertise',
+              '다양한 기술 경험: 넓은 개발 스펙트럼을 통한 문제 해결 능력 보유',
+              // 'Extensive Technical Experience: Broad development spectrum with diverse technical expertise',
               style: TextStyle(
                 fontSize: 24.0,
                 color: Colors.white,
