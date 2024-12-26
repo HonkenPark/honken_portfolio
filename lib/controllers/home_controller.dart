@@ -117,5 +117,5 @@ class HomeController extends GetxController {
         ],
       ),
     ),
-  ].animate(interval: 1200.ms).fadeIn(duration: 1500.ms, delay: 300.ms);
+  ].animate(interval: 700.ms).fadeIn(duration: 800.ms, delay: 500.ms);
 }

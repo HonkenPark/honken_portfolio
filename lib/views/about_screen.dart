@@ -20,7 +20,7 @@ class AboutScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    '저에 대해서 소개드리면,',
+                    '저는 이러한 개발자입니다.',
                     // 'Hi, I\'m',
                     style: TextStyle(
                       fontSize: 12.0,

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:honken_portfolio/controllers/base_controller.dart';
 import 'package:honken_portfolio/enums.dart';
 import 'package:honken_portfolio/views/about_screen.dart';
+import 'package:honken_portfolio/views/contact_screen.dart';
 import 'package:honken_portfolio/views/home_screen.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -61,7 +62,7 @@ class BaseScreen extends StatelessWidget {
           case ScreenContentType.skill:
             return const Center(child: Text('skill page'));
           case ScreenContentType.contact:
-            return const Center(child: Text('contact page'));
+            return const ContactScreen();
         }
       }),
     );
