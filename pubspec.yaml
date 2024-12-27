@@ -32,3 +32,6 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/clients/
+    - assets/images/contacts/
+    - assets/images/skills/

@@ -30,7 +30,7 @@ class ContactScreen extends StatelessWidget {
                           decoration: const BoxDecoration(
                             border: Border.symmetric(),
                             image: DecorationImage(
-                              image: AssetImage('assets/images/contact_github_white.png'),
+                              image: AssetImage('assets/images/contacts/contact_github_white.png'),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -41,7 +41,7 @@ class ContactScreen extends StatelessWidget {
                           decoration: const BoxDecoration(
                             border: Border.symmetric(),
                             image: DecorationImage(
-                              image: AssetImage('assets/images/contact_linkedin_white.png'),
+                              image: AssetImage('assets/images/contacts/contact_linkedin_white.png'),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -52,7 +52,7 @@ class ContactScreen extends StatelessWidget {
                           decoration: const BoxDecoration(
                             border: Border.symmetric(),
                             image: DecorationImage(
-                              image: AssetImage('assets/images/contact_tistory_white.png'),
+                              image: AssetImage('assets/images/contacts/contact_tistory_white.png'),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -63,7 +63,7 @@ class ContactScreen extends StatelessWidget {
                           decoration: const BoxDecoration(
                             border: Border.symmetric(),
                             image: DecorationImage(
-                              image: AssetImage('assets/images/contact_figma_white.png'),
+                              image: AssetImage('assets/images/contacts/contact_figma_white.png'),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -74,7 +74,7 @@ class ContactScreen extends StatelessWidget {
                           decoration: const BoxDecoration(
                             border: Border.symmetric(),
                             image: DecorationImage(
-                              image: AssetImage('assets/images/contact_hr_white.png'),
+                              image: AssetImage('assets/images/contacts/contact_hr_white.png'),
                               fit: BoxFit.fill,
                             ),
                           ),
