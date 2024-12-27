@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:honken_portfolio/enums.dart';
+import 'package:honken_portfolio/views/project_detail_screen.dart';
 
 class ProjectScreen extends StatelessWidget {
   const ProjectScreen({super.key});
@@ -60,21 +61,35 @@ class ProjectScreen extends StatelessWidget {
                       ),
                       itemCount: ClientType.values.length,
                       itemBuilder: (context, index) {
+                        final client = ClientType.values[index];
                         return Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Card(
-                              color: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(14),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Image.asset(
-                                  // width: 140,
-                                  // height: 140,
-                                  ClientType.values[index].path,
-                                  fit: BoxFit.fill,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ProjectDetailScreen(
+                                      client: client,
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: Hero(
+                                tag: 'project-${client.name}',
+                                child: Card(
+                                  color: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(14),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Image.asset(
+                                      client.path,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -87,7 +102,7 @@ class ProjectScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    ClientType.values[index].projectName,
+                                    client.projectName,
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 18,
@@ -95,7 +110,7 @@ class ProjectScreen extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    ClientType.values[index].projectPeriod,
+                                    client.projectPeriod,
                                     style: const TextStyle(
                                       color: Colors.grey,
                                       fontSize: 14,
@@ -103,7 +118,7 @@ class ProjectScreen extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    ClientType.values[index].projectRole,
+                                    client.projectRole,
                                     style: const TextStyle(
                                       color: Colors.grey,
                                       fontSize: 14,
