@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:honken_portfolio/controllers/home_controller.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,6 +10,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final homeController = Get.put(HomeController());
+    final isDesktop = ResponsiveBreakpoints.of(context).largerThan(TABLET);
+
     return Scaffold(
       backgroundColor: const Color(0xFF1E1E1E),
       body: Padding(
@@ -19,21 +22,21 @@ class HomeScreen extends StatelessWidget {
             Stack(
               alignment: Alignment.center,
               children: [
-                const Text(
+                Text(
                   'Frontend Developer based in Seoul, Korea',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 48.0,
+                    fontSize: isDesktop ? 48.0 : 36.0,
                     color: Colors.blue,
                     height: 1.0,
                     letterSpacing: -1.0,
                   ),
                 ),
-                const Text(
+                Text(
                   'Frontend Developer based in Seoul, Korea',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 48.0,
+                    fontSize: isDesktop ? 48.0 : 36.0,
                     color: Colors.blue,
                     height: 1.0,
                     letterSpacing: -1.0,
@@ -45,8 +48,8 @@ class HomeScreen extends StatelessWidget {
             Column(
               children: [
                 Container(
-                  width: 240,
-                  height: 240,
+                  width: isDesktop ? 240 : 180,
+                  height: isDesktop ? 240 : 180,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
@@ -60,11 +63,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 24.0),
-                const Text(
+                Text(
                   '프론트엔드 개발자 박홍근 입니다.',
                   // 'Honken Park',
                   style: TextStyle(
-                    fontSize: 36.0,
+                    fontSize: isDesktop ? 36.0 : 28.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
@@ -79,11 +82,11 @@ class HomeScreen extends StatelessWidget {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ).createShader(bounds),
-                  child: const Text(
+                  child: Text(
                     '  웹과 모바일을 잇는 기술로 사용자 중심의 경험을 설계합니다.  ',
                     // '  Bridging web and mobile with technology, designing user-first solutions  ',
                     style: TextStyle(
-                      fontSize: 24.0,
+                      fontSize: isDesktop ? 24.0 : 20.0,
                       fontWeight: FontWeight.normal,
                       color: Colors.white,
                     ),
@@ -95,7 +98,7 @@ class HomeScreen extends StatelessWidget {
             Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [...homeController.infoItems],
+                children: homeController.generateInfoItems(context),
               ),
             ),
           ],
