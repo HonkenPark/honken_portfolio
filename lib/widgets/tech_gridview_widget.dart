@@ -115,7 +115,7 @@ class _TechGridViewWidgetState extends State<TechGridViewWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: MediaQuery.of(context).size.height * 0.1,
+                height: MediaQuery.sizeOf(context).height * 0.1,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     opacity: techImageList[idx]['enable'] ? 1 : 0.2,

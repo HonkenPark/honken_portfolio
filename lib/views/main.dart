@@ -81,7 +81,7 @@ class _MainScreenState extends State<MainScreen> {
             ],
             currentIndex: navIndex,
             showUnselectedLabels: true,
-            iconSize: MediaQuery.of(context).size.width * 0.03,
+            iconSize: MediaQuery.sizeOf(context).width * 0.03,
             selectedItemColor: const Color(0xFFFF6347),
             unselectedItemColor: const Color(0xFF656C7A),
             onTap: _onItemTapped,

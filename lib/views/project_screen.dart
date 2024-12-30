@@ -1,29 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:honken_portfolio/enums.dart';
 import 'package:honken_portfolio/views/project_detail_screen.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class ProjectScreen extends StatelessWidget {
   const ProjectScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final isDesktop = ResponsiveBreakpoints.of(context).largerThan(TABLET);
+
     return Scaffold(
       backgroundColor: const Color(0xFF1E1E1E),
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
             constraints: BoxConstraints(
-              maxWidth: MediaQuery.of(context).size.width * 0.8,
-              maxHeight: MediaQuery.of(context).size.height * 0.7,
+              maxWidth: isDesktop ? MediaQuery.sizeOf(context).width * 0.8 : MediaQuery.sizeOf(context).width * 0.9,
+              maxHeight: isDesktop ? MediaQuery.sizeOf(context).height * 0.7 : MediaQuery.sizeOf(context).height * 0.8,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text(
+                Text(
                   'PROJECTS',
                   style: TextStyle(
-                    fontSize: 48,
+                    fontSize: isDesktop ? 48.0 : 28.0,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
@@ -38,32 +41,32 @@ class ProjectScreen extends StatelessWidget {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ).createShader(bounds),
-                  child: const Text(
+                  child: Text(
                     '  ARRANGED BY CLIENT  ',
                     // '  Honken Park  ',
                     style: TextStyle(
-                      fontSize: 18.0,
+                      fontSize: isDesktop ? 18.0 : 14.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
                 ),
-                const SizedBox(height: 80),
+                SizedBox(height: isDesktop ? 80 : 50),
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: GridView.builder(
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: isDesktop ? 2 : 1,
                         crossAxisSpacing: 16,
                         mainAxisSpacing: 16,
-                        childAspectRatio: 4,
+                        childAspectRatio: isDesktop ? 4 : 3,
                       ),
                       itemCount: ClientType.values.length,
                       itemBuilder: (context, index) {
                         final client = ClientType.values[index];
                         return Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: isDesktop ? MainAxisAlignment.start : MainAxisAlignment.center,
                           children: [
                             GestureDetector(
                               onTap: () {
@@ -93,40 +96,41 @@ class ProjectScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
+                            if (isDesktop)
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      client.projectName,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      client.projectPeriod,
+                                      style: const TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 14,
+                                        fontStyle: FontStyle.italic,
+                                      ),
+                                    ),
+                                    Text(
+                                      client.projectRole,
+                                      style: const TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    client.projectName,
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Text(
-                                    client.projectPeriod,
-                                    style: const TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 14,
-                                      fontStyle: FontStyle.italic,
-                                    ),
-                                  ),
-                                  Text(
-                                    client.projectRole,
-                                    style: const TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
                           ],
                         );
                       },

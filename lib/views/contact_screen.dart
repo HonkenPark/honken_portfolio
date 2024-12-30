@@ -91,7 +91,7 @@ class ContactScreen extends StatelessWidget {
                 'honken.park@gmail.com',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: MediaQuery.of(context).size.width * 0.02,
+                  fontSize: MediaQuery.sizeOf(context).width * 0.02,
                   color: Colors.white,
                 ),
               ),
