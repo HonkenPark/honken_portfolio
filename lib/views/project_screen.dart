@@ -8,7 +8,7 @@ class ProjectScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDesktop = ResponsiveBreakpoints.of(context).largerThan(TABLET);
+    final isDesktop = ResponsiveBreakpoints.of(context).largerThan('SMALL_DESKTOP');
 
     return Scaffold(
       backgroundColor: const Color(0xFF1E1E1E),
@@ -63,7 +63,7 @@ class ProjectScreen extends StatelessWidget {
                           crossAxisCount: isDesktop ? 2 : 1,
                           crossAxisSpacing: 16,
                           mainAxisSpacing: 16,
-                          childAspectRatio: isDesktop ? 4 : 3,
+                          childAspectRatio: isDesktop ? 4 : 5,
                         ),
                         itemCount: ClientType.values.length,
                         itemBuilder: (context, index) {
@@ -89,8 +89,8 @@ class ProjectScreen extends StatelessWidget {
                                 child: Padding(
                                   padding: const EdgeInsets.all(12.0),
                                   child: Row(
+                                    mainAxisAlignment: isDesktop ? MainAxisAlignment.start : MainAxisAlignment.center,
                                     crossAxisAlignment: CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Image.asset(
                                         client.path,
@@ -98,35 +98,38 @@ class ProjectScreen extends StatelessWidget {
                                         width: isDesktop ? maxWidth * 0.15 : maxWidth * 0.3,
                                       ),
                                       if (isDesktop) ...[
-                                        const SizedBox(width: 12),
-                                        Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              client.projectName,
-                                              style: const TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.bold,
+                                        const SizedBox(width: 42),
+                                        SizedBox(
+                                          width: MediaQuery.sizeOf(context).width / 5,
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                client.projectName,
+                                                style: const TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
                                               ),
-                                            ),
-                                            Text(
-                                              client.projectPeriod,
-                                              style: const TextStyle(
-                                                color: Colors.grey,
-                                                fontSize: 14,
-                                                fontStyle: FontStyle.italic,
+                                              Text(
+                                                client.projectPeriod,
+                                                style: const TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 14,
+                                                  fontStyle: FontStyle.italic,
+                                                ),
                                               ),
-                                            ),
-                                            Text(
-                                              client.projectRole,
-                                              style: const TextStyle(
-                                                color: Colors.grey,
-                                                fontSize: 14,
+                                              Text(
+                                                client.projectRole,
+                                                style: const TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 13,
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ]
                                     ],

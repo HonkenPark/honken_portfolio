@@ -11,7 +11,29 @@ class ProjectDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('project-${client.name}');
+    List<String> getSkillByProject(ClientType project) {
+      List<String> ret = [];
+      switch (project) {
+        case ClientType.samsung:
+          ret.add('assets/images/skills/flutter.png');
+          ret.add('assets/images/skills/git.png');
+          break;
+        case ClientType.saig:
+          break;
+        case ClientType.mz:
+          break;
+        case ClientType.sd:
+          break;
+        case ClientType.jeju:
+          break;
+        case ClientType.vw:
+          break;
+        case ClientType.hmcLge:
+          break;
+      }
+      return ret;
+    }
+
     return Scaffold(
       backgroundColor: const Color(0xFF1E1E1E),
       appBar: AppBar(
@@ -62,11 +84,22 @@ class ProjectDetailScreen extends StatelessWidget {
                 fontStyle: FontStyle.italic,
               ),
             ),
-            const SizedBox(height: 10),
-            Text(
-              client.projectRole,
-              style: const TextStyle(
-                color: Colors.grey,
+            const SizedBox(height: 30),
+            SizedBox(
+              width: MediaQuery.sizeOf(context).width / 2,
+              child: Text(
+                client.projectDescription,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            const SizedBox(height: 30),
+            const Text(
+              '[사용 스킬]',
+              style: TextStyle(
+                color: Colors.white,
                 fontSize: 18,
               ),
             ),
