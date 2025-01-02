@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:honken_portfolio/enums.dart';
 import 'package:honken_portfolio/views/project_detail_screen.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -9,6 +10,7 @@ class ProjectScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDesktop = ResponsiveBreakpoints.of(context).largerThan('SMALL_DESKTOP');
+    final is4k = ResponsiveBreakpoints.of(context).largerOrEqualTo('4K');
 
     return Scaffold(
       backgroundColor: const Color(0xFF1E1E1E),
@@ -29,7 +31,7 @@ class ProjectScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'PROJECTS',
+                      'project_title'.tr,
                       style: TextStyle(
                         fontSize: isDesktop ? 48.0 : 28.0,
                         color: Colors.white,
@@ -47,7 +49,7 @@ class ProjectScreen extends StatelessWidget {
                         end: Alignment.bottomRight,
                       ).createShader(bounds),
                       child: Text(
-                        '  ARRANGED BY CLIENT  ',
+                        'project_client_title'.tr,
                         style: TextStyle(
                           fontSize: isDesktop ? 18.0 : 14.0,
                           fontWeight: FontWeight.bold,
@@ -60,10 +62,18 @@ class ProjectScreen extends StatelessWidget {
                       child: GridView.builder(
                         padding: const EdgeInsets.all(16.0),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: isDesktop ? 2 : 1,
+                          crossAxisCount: is4k
+                              ? 3
+                              : isDesktop
+                                  ? 2
+                                  : 1,
                           crossAxisSpacing: 16,
                           mainAxisSpacing: 16,
-                          childAspectRatio: isDesktop ? 4 : 5,
+                          childAspectRatio: is4k
+                              ? 3
+                              : isDesktop
+                                  ? 4
+                                  : 5,
                         ),
                         itemCount: ClientType.values.length,
                         itemBuilder: (context, index) {
@@ -95,18 +105,18 @@ class ProjectScreen extends StatelessWidget {
                                       Image.asset(
                                         client.path,
                                         fit: BoxFit.cover,
-                                        width: isDesktop ? maxWidth * 0.15 : maxWidth * 0.3,
+                                        width: isDesktop ? maxWidth * 0.15 : maxWidth * 0.2,
                                       ),
                                       if (isDesktop) ...[
                                         const SizedBox(width: 42),
                                         SizedBox(
-                                          width: MediaQuery.sizeOf(context).width / 5,
+                                          width: is4k ? MediaQuery.sizeOf(context).width / 10 : MediaQuery.sizeOf(context).width / 5,
                                           child: Column(
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                client.projectName,
+                                                client.name,
                                                 style: const TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 18,
@@ -114,7 +124,7 @@ class ProjectScreen extends StatelessWidget {
                                                 ),
                                               ),
                                               Text(
-                                                client.projectPeriod,
+                                                client.period,
                                                 style: const TextStyle(
                                                   color: Colors.grey,
                                                   fontSize: 14,
@@ -122,7 +132,7 @@ class ProjectScreen extends StatelessWidget {
                                                 ),
                                               ),
                                               Text(
-                                                client.projectRole,
+                                                client.role,
                                                 style: const TextStyle(
                                                   color: Colors.grey,
                                                   fontSize: 13,

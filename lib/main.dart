@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:honken_portfolio/translations/app_translations.dart';
 import 'package:honken_portfolio/views/base_screen.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -33,7 +34,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-      title: '개발자 포트폴리오',
+      title: 'Honken\'s Portfolio',
       initialRoute: '/',
       getPages: [
         GetPage(
@@ -41,14 +42,20 @@ class MainApp extends StatelessWidget {
           page: () => const BaseScreen(),
         ),
       ],
+      translations: AppTranslations(),
+      locale: const Locale('ko', 'KR'),
+      fallbackLocale: const Locale('en', 'US'),
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
-        Locale('en', 'US'),
         Locale('ko', 'KR'),
+        Locale('en', 'US'),
+        Locale('ja', 'JP'),
+        Locale('zh', 'CN'),
+        Locale('es', 'ES'),
       ],
     );
   }

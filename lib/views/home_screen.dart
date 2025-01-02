@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 Text(
-                  'Frontend Developer based in Seoul, Korea',
+                  'home_main_title'.tr,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: isDesktop ? 48.0 : 36.0,
@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Frontend Developer based in Seoul, Korea',
+                  'home_main_title'.tr,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: isDesktop ? 48.0 : 36.0,
@@ -64,8 +64,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 24.0),
                 Text(
-                  '프론트엔드 개발자 박홍근 입니다.',
-                  // 'Honken Park',
+                  'home_introduce_01'.tr,
                   style: TextStyle(
                     fontSize: isDesktop ? 36.0 : 28.0,
                     fontWeight: FontWeight.bold,
@@ -83,8 +82,7 @@ class HomeScreen extends StatelessWidget {
                     end: Alignment.bottomRight,
                   ).createShader(bounds),
                   child: Text(
-                    '  웹과 모바일을 잇는 기술로 사용자 중심의 경험을 설계합니다.  ',
-                    // '  Bridging web and mobile with technology, designing user-first solutions  ',
+                    'home_introduce_02'.tr,
                     style: TextStyle(
                       fontSize: isDesktop ? 24.0 : 20.0,
                       fontWeight: FontWeight.normal,

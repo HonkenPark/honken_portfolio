@@ -20,25 +20,25 @@ class HomeController extends GetxController {
       _infoItem(
         context,
         icon: Icons.flutter_dash,
-        text: 'Flutter를 통한 웹·모바일 크로스 플랫폼 앱 개발 능력 보유',
+        text: 'home_strength_01'.tr,
         fontSize: isDesktop ? 24.0 : 18.0,
       ),
       _infoItem(
         context,
         icon: Icons.group,
-        text: 'React 기반 SPA 개발 주도 및 팀 리딩 경험',
+        text: 'home_strength_02'.tr,
         fontSize: isDesktop ? 24.0 : 18.0,
       ),
       _infoItem(
         context,
         icon: Icons.api,
-        text: 'Express 및 Koa를 활용한 API 설계 및 SSR 구현 경험',
+        text: 'home_strength_03'.tr,
         fontSize: isDesktop ? 24.0 : 18.0,
       ),
       _infoItem(
         context,
         icon: Icons.integration_instructions,
-        text: '다양한 디바이스에서의 성능 튜닝, 로깅, 디버깅 노하우를 통해 안정성 높은 서비스를 구현',
+        text: 'home_strength_04'.tr,
         fontSize: isDesktop ? 24.0 : 18.0,
       ),
     ].animate(interval: 700.ms).fadeIn(duration: 800.ms, delay: 500.ms);

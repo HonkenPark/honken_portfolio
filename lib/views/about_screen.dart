@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -23,7 +24,7 @@ class AboutScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '저에 대해서,',
+                    'about_pre_intro'.tr,
                     // 'Hi, I\'m',
                     style: TextStyle(
                       fontSize: isDesktop ? 14.0 : 10.0,
@@ -42,7 +43,7 @@ class AboutScreen extends StatelessWidget {
                       end: Alignment.bottomRight,
                     ).createShader(bounds),
                     child: Text(
-                      '  다양한 개발 경험을 가진 개발자  ',
+                      'about_title'.tr,
                       // '  Honken Park  ',
                       style: TextStyle(
                         fontSize: isDesktop ? 52.0 : 36.0,
@@ -53,7 +54,7 @@ class AboutScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 24.0),
                   Text(
-                    '10여 년 동안 다양한 기술 분야에서 경험을 쌓아왔으며, React와 Flutter를 중심으로 웹 및 모바일 애플리케이션 개발에 집중하고 있습니다. 특히 HTML/CSS와 Javascript에 대한 깊은 이해를 바탕으로 사용자 친화적인 SPA 기반의 웹 애플리케이션을 설계하고 구현한 경험이 많습니다. 현재는 삼성전자 DS와의 키오스크 프로젝트에서 관제 웹페이지 개발을 담당하며, 사용자 경험을 최우선으로 고려한 효율적인 시스템을 구현하고 있습니다.\n\n저의 강점은 차량용 미들웨어 개발 경험을 바탕으로 시나리오 구조 설계 및 사용자 액션에 대한 인터랙션 처리에 뛰어난 능력을 가지고 있다는 점입니다. 또한, UX/UI 설계의 중요성을 인지하고 있어 Figma와 포토샵을 직접 활용하여 디자인과 개발의 경계를 허물며 빠른 생산성을 추구합니다. 과거 ReactJS를 이용한 정부 과제 프로젝트를 통해 팀 리딩을 하였고, 글로벌 프로젝트에서 미국과 독일 출장 경험을 통해 문제 해결 능력과 빠른 의사소통을 배우게 되었습니다. 이러한 경험들로 인해 다양한 상황에서도 문제를 유연하게 대응하고 해결할 수 있는 능력을 갖추고 있습니다.\n\n저는 항상 문제 해결을 위해 동료들과 소통하며, 각자의 역할을 잘 분배하여 팀이 원활하게 진행될 수 있도록 노력합니다. 제 개발자로서의 목표는 사용자 경험을 중시하며, 기술적으로도 뛰어난 품질을 자랑하는 서비스를 제공하여 나아가서 조직을 발전시키는 데 초점을 맞추고 있습니다.',
+                    'about_description'.tr,
                     style: TextStyle(
                       fontSize: isDesktop ? 16.0 : 14.0,
                       fontWeight: FontWeight.normal,

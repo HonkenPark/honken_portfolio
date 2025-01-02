@@ -26,17 +26,12 @@ class BaseScreen extends StatelessWidget {
                 labelColor: Colors.white,
                 indicatorColor: Colors.blue,
                 tabAlignment: TabAlignment.center,
-                tabs: const [
-                  // Tab(text: 'HOME'),
-                  // Tab(text: 'ABOUT'),
-                  // Tab(text: 'PROJECT'),
-                  // Tab(text: 'SKILL'),
-                  // Tab(text: 'CONTACT'),
-                  Tab(text: '홈'),
-                  Tab(text: '소개'),
-                  Tab(text: '프로젝트'),
-                  // Tab(text: '기술'),
-                  Tab(text: '연락처'),
+                tabs: [
+                  Tab(text: ScreenContentType.home.name),
+                  Tab(text: ScreenContentType.about.name),
+                  Tab(text: ScreenContentType.project.name),
+                  // Tab(text: ScreenContentType.skill.name),
+                  Tab(text: ScreenContentType.contact.name),
                 ],
               )
             : null,
