@@ -54,4 +54,5 @@ final Map<String, String> koKr = {
   'project_title': 'PROJECTS',
   'project_client_title': '  ARRANGED BY CLIENT  ',
   'project_used_skills': '[사용 기술]',
+  'mail_address_copied': '메일주소가 클립보드에 복사되었습니다.',
 };

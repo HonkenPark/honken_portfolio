@@ -49,4 +49,5 @@ final Map<String, String> jaJp = {
   'project_title': 'プロジェクト',
   'project_client_title': '  クライアント別  ',
   'project_used_skills': '[使用スキル]',
+  'mail_address_copied': 'メールアドレスがクリップボードにコピーされました。',
 };

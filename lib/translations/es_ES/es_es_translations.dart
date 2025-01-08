@@ -49,4 +49,5 @@ final Map<String, String> esEs = {
   'project_title': 'Proyectos',
   'project_client_title': '  Por cliente  ',
   'project_used_skills': '[Tecnologías utilizadas]',
+  'mail_address_copied': 'El correo electrónico se ha copiado al portapapeles.',
 };

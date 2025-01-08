@@ -112,21 +112,31 @@ class ProjectDetailScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              Text(
-                client.name,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 48.0,
+                ),
+                child: Text(
+                  client.name,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               const SizedBox(height: 10),
-              Text(
-                client.period,
-                style: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 18,
-                  fontStyle: FontStyle.italic,
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12.0,
+                ),
+                child: Text(
+                  client.period,
+                  style: const TextStyle(
+                    color: Colors.grey,
+                    fontSize: 18,
+                    fontStyle: FontStyle.italic,
+                  ),
                 ),
               ),
               const SizedBox(height: 30),
@@ -140,7 +150,7 @@ class ProjectDetailScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 50),
               Text(
                 'project_used_skills'.tr,
                 style: const TextStyle(
@@ -151,29 +161,45 @@ class ProjectDetailScreen extends StatelessWidget {
               const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 48.0),
-                child: GridView.count(
-                  crossAxisCount: 4,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: getSkillByProject(client).map((skill) {
-                    return Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 2.0,
-                        ),
-                        image: DecorationImage(
-                          image: AssetImage(skill),
-                          fit: BoxFit.cover,
-                        ),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: getSkillByProject(client).length * 120.0,
+                    ),
+                    child: GridView.builder(
+                      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                        maxCrossAxisExtent: 100,
+                        crossAxisSpacing: 16.0,
+                        mainAxisSpacing: 16.0,
+                        childAspectRatio: 1.0,
                       ),
-                    );
-                  }).toList(),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: getSkillByProject(client).length,
+                      itemBuilder: (context, index) {
+                        final skill = getSkillByProject(client)[index];
+                        return Container(
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Colors.white,
+                              width: 2.0,
+                            ),
+                            image: DecorationImage(
+                              image: AssetImage(skill),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                 ),
               ),
+              const SizedBox(height: 10),
             ],
           ),
         ),
