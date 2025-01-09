@@ -42,12 +42,12 @@ class ProjectDetailScreen extends StatelessWidget {
           break;
         case ClientType.sd:
           ret.add('assets/images/skills/react.png');
-          // Redux
-          // Electron
+          ret.add('assets/images/skills/redux.png');
+          ret.add('assets/images/skills/electron.png');
           ret.add('assets/images/skills/javascript.png');
           ret.add('assets/images/skills/nginx.png');
-          // Oracle
-          // GitLab
+          ret.add('assets/images/skills/oracle.png');
+          ret.add('assets/images/skills/gitlab.png');
           ret.add('assets/images/skills/figma.png');
           break;
         case ClientType.jeju:
@@ -55,24 +55,24 @@ class ProjectDetailScreen extends StatelessWidget {
           ret.add('assets/images/skills/html.png');
           ret.add('assets/images/skills/css.png');
           ret.add('assets/images/skills/jquery.png');
-          // Tomcat
-          // Git Lab
+          ret.add('assets/images/skills/tomcat.png');
+          ret.add('assets/images/skills/gitlab.png');
           break;
         case ClientType.vw:
           ret.add('assets/images/skills/cpp.png');
           ret.add('assets/images/skills/git.png');
-          // Gerrit
-          // Shell Script
-          // Ubuntu Kernel
-          // Cerence or Vocon5
+          ret.add('assets/images/skills/gerrit.png');
+          ret.add('assets/images/skills/shell.png');
+          ret.add('assets/images/skills/ubuntu.png');
+          ret.add('assets/images/skills/cerence.png');
           break;
         case ClientType.hmcLge:
           ret.add('assets/images/skills/qt.png');
           ret.add('assets/images/skills/cpp.png');
           ret.add('assets/images/skills/c.png');
-          // Shell Script
+          ret.add('assets/images/skills/shell.png');
           ret.add('assets/images/skills/svn.png');
-          // Ubuntu Kernel
+          ret.add('assets/images/skills/ubuntu.png');
           break;
       }
       return ret;
