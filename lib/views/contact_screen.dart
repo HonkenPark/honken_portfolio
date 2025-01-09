@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactScreen extends StatelessWidget {
@@ -10,7 +9,6 @@ class ContactScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FToast fToast = FToast();
     final isMobile = ResponsiveBreakpoints.of(context).isMobile;
     final isTablet = ResponsiveBreakpoints.of(context).smallerThan('SMALL_DESKTOP');
 
@@ -22,26 +20,19 @@ class ContactScreen extends StatelessWidget {
 
     void copyToClipboard(String text) {
       Clipboard.setData(ClipboardData(text: text));
-      fToast.showToast(
-        child: Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.02,
-            vertical: MediaQuery.of(context).size.width * 0.01,
-          ),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width),
-            color: const Color(0xFF666666),
-          ),
-          child: Text(
-            'mail_address_copied'.tr,
-            style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.01,
-              color: Colors.white,
-            ),
+      Get.snackbar(
+        'copy_complete'.tr,
+        'mail_address_copied'.tr,
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.white,
+        colorText: Colors.black,
+        snackStyle: SnackStyle.GROUNDED,
+        messageText: Text(
+          'mail_address_copied'.tr,
+          style: const TextStyle(
+            color: Colors.black,
           ),
         ),
-        gravity: ToastGravity.BOTTOM,
-        toastDuration: const Duration(seconds: 2),
       );
     }
 

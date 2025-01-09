@@ -48,5 +48,6 @@ final Map<String, String> zhCn = {
   'project_title': '项目',
   'project_client_title': '  按客户分类  ',
   'project_used_skills': '[使用技术]',
+  'copy_complete': '复制完成',
   'mail_address_copied': '电子邮件已复制到剪贴板。',
 };

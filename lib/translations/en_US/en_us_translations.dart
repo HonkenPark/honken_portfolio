@@ -49,5 +49,6 @@ final Map<String, String> enUs = {
   'project_title': 'PROJECTS',
   'project_client_title': '  ARRANGED BY CLIENT  ',
   'project_used_skills': '[Skills Used]',
+  'copy_complete': 'Copy complete',
   'mail_address_copied': 'The e-mail has copied into clipboard.',
 };
