@@ -8,7 +8,7 @@ final Map<String, String> zhCn = {
   'screen_skill': '技能',
   'screen_contact': '联系方式',
   'client_title_samsung': '[三星项目]',
-  'client_period_samsung': '2024.06 ~ 2025.02',
+  'client_period_samsung': '2024.06 ~ 2025.03',
   'client_role_samsung': '三星自助终端前端开发',
   'client_description_samsung': '将遗留代码重构为Flutter，快速交付三星DS的自助终端控制页面。',
   'client_title_saig': '[ThinkAI项目]',

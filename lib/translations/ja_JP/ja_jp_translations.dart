@@ -8,7 +8,7 @@ final Map<String, String> jaJp = {
   'screen_skill': 'スキル',
   'screen_contact': '連絡先',
   'client_title_samsung': '[サムスンプロジェクト]',
-  'client_period_samsung': '2024.06 ~ 2025.02',
+  'client_period_samsung': '2024.06 ~ 2025.03',
   'client_role_samsung': 'サムスンキオスク フロントエンド開発',
   'client_description_samsung': 'レガシーコードをFlutterにリファクタリングし、サムスンDS用のキオスク制御ページを迅速に提供。',
   'client_title_saig': '[ThinkAIプロジェクト]',

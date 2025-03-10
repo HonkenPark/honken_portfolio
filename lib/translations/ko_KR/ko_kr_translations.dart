@@ -8,7 +8,7 @@ final Map<String, String> koKr = {
   'screen_skill': '기술',
   'screen_contact': '연락처',
   'client_title_samsung': '[삼성전자 DS 공사작업 무인보관함 프로젝트]',
-  'client_period_samsung': '2024.06 ~ 2025.02',
+  'client_period_samsung': '2024.06 ~ 2025.03',
   'client_role_samsung': '삼성전자 DS 키오스크 관제페이지 프론트엔드 개발',
   'client_description_samsung': '• 삼성전자 DS에 제공하는 무인보관함(키오스크)의 관제페이지를 구현하는 역할을 맡아 기존 개발부서에서 사용하던 레거시 코드를 Flutter로 리팩토링하여 고객사에 빠른 개발 산출물 제공 및 유지보수성 확보',
   'client_title_saig': '[AI 솔루션 크로스 플랫폼 앱 개발]',

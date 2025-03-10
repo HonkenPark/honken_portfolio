@@ -8,7 +8,7 @@ final Map<String, String> enUs = {
   'screen_skill': 'SKILLS',
   'screen_contact': 'CONTACTS',
   'client_title_samsung': '[Samsung Project]',
-  'client_period_samsung': '2024.06 ~ 2025.02',
+  'client_period_samsung': '2024.06 ~ 2025.03',
   'client_role_samsung': 'Frontend for Samsung Kiosk System',
   'client_description_samsung': 'Refactored legacy code to Flutter for fast output of kiosk control pages for Samsung DS.',
   'client_title_saig': '[ThinkAI Project]',

@@ -8,7 +8,7 @@ final Map<String, String> esEs = {
   'screen_skill': 'Habilidades',
   'screen_contact': 'Contacto',
   'client_title_samsung': '[Proyecto Samsung]',
-  'client_period_samsung': '2024.06 ~ 2025.02',
+  'client_period_samsung': '2024.06 ~ 2025.03',
   'client_role_samsung': 'Desarrollo frontend para kiosco Samsung',
   'client_description_samsung': 'Refactorización de código heredado a Flutter para páginas de control rápidas de Samsung DS.',
   'client_title_saig': '[Proyecto ThinkAI]',

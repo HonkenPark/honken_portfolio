@@ -109,36 +109,38 @@ class ProjectScreen extends StatelessWidget {
                                       ),
                                       if (isDesktop) ...[
                                         const SizedBox(width: 42),
-                                        SizedBox(
-                                          width: is4k ? MediaQuery.sizeOf(context).width / 10 : MediaQuery.sizeOf(context).width / 5,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                client.name,
-                                                style: const TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.bold,
+                                        SingleChildScrollView(
+                                          child: SizedBox(
+                                            width: is4k ? MediaQuery.sizeOf(context).width / 10 : MediaQuery.sizeOf(context).width / 5,
+                                            child: Column(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  client.name,
+                                                  style: const TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
                                                 ),
-                                              ),
-                                              Text(
-                                                client.period,
-                                                style: const TextStyle(
-                                                  color: Colors.grey,
-                                                  fontSize: 14,
-                                                  fontStyle: FontStyle.italic,
+                                                Text(
+                                                  client.period,
+                                                  style: const TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 14,
+                                                    fontStyle: FontStyle.italic,
+                                                  ),
                                                 ),
-                                              ),
-                                              Text(
-                                                client.role,
-                                                style: const TextStyle(
-                                                  color: Colors.grey,
-                                                  fontSize: 13,
+                                                Text(
+                                                  client.role,
+                                                  style: const TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 13,
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ]
